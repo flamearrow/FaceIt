@@ -76,18 +76,21 @@ class FaceViewController: UIViewController {
     
     private var eyeBrowTilts = [FacialExpression.EyeBrows.Furrowed:CGFloat(-0.5),FacialExpression.EyeBrows.Relaxed:CGFloat(0.5),FacialExpression.EyeBrows.Normal:CGFloat(0.0)]
     
+    // note updateUI might be called before faceView is set e.g prepareSegue, so need to do nil check here
     private func updateUI() {
-        switch expression.eyes {
-        case .Closed:
-            faceView.eyeClosed = true
-        case .Open:
-            faceView.eyeClosed = false
-        case .Squinting:
-            faceView.eyeClosed = true
+        if faceView != nil {
+            switch expression.eyes {
+            case .Closed:
+                faceView.eyeClosed = true
+            case .Open:
+                faceView.eyeClosed = false
+            case .Squinting:
+                faceView.eyeClosed = true
+            }
+            
+            faceView.mouthCur = mouthCurvs[expression.mouth] ?? 0.0
+            faceView.eyeBrowTilt = eyeBrowTilts[expression.eyeBrows] ?? 0.0
         }
-        
-        faceView.mouthCur = mouthCurvs[expression.mouth] ?? 0.0
-        faceView.eyeBrowTilt = eyeBrowTilts[expression.eyeBrows] ?? 0.0
     }
 }
 
