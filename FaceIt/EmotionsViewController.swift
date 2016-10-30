@@ -10,15 +10,15 @@ import UIKit
 
 class EmotionsViewController: UIViewController {
     
-    private let emotionalFaces = [
-        "angry": FacialExpression(eyes: .Closed, eyeBrows: .Furrowed, mouth: .Frown),
-        "happy": FacialExpression(eyes: .Open, eyeBrows: .Normal, mouth: .Smile),
-        "worried": FacialExpression(eyes: .Open, eyeBrows: .Relaxed, mouth: .Smirk),
-        "mischievious": FacialExpression(eyes: .Open, eyeBrows: .Furrowed, mouth: .Grin)
+    fileprivate let emotionalFaces = [
+        "angry": FacialExpression(eyes: .closed, eyeBrows: .furrowed, mouth: .frown),
+        "happy": FacialExpression(eyes: .open, eyeBrows: .normal, mouth: .smile),
+        "worried": FacialExpression(eyes: .open, eyeBrows: .relaxed, mouth: .smirk),
+        "mischievious": FacialExpression(eyes: .open, eyeBrows: .furrowed, mouth: .grin)
     ]
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var destinationVC = segue.destinationViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var destinationVC = segue.destination
         // instanceof, if null don't do anything
         // note here since the segue is navitating to a NavigationController leading a FaceViewController, 
         // we need to first cast it into a destinationVC and gets the wrapped visibileViewController inside

@@ -11,7 +11,7 @@ import UIKit
 // controller
 // controls View and Model, take value from model and reflect it on UI when value changes
 class FaceViewController: UIViewController {
-    var expression = FacialExpression(eyes: .Open, eyeBrows: .Relaxed, mouth: .Smile) {
+    var expression = FacialExpression(eyes: .open, eyeBrows: .relaxed, mouth: .smile) {
         didSet {
             // note this is not call in init, need to explicit set it to make this called
             updateUI()
@@ -25,19 +25,19 @@ class FaceViewController: UIViewController {
             faceView.addGestureRecognizer(UIPinchGestureRecognizer(target: faceView,
                 action: #selector(FaceView.changeScale(_:))))
             let happierSwiperRec = UISwipeGestureRecognizer(target: self, action: #selector(FaceViewController.makeHappier))
-            happierSwiperRec.direction = .Up
+            happierSwiperRec.direction = .up
             faceView.addGestureRecognizer(happierSwiperRec)
             
             let sadderSwiperRec = UISwipeGestureRecognizer(target: self, action: #selector(FaceViewController.makeSadder))
-            sadderSwiperRec.direction = .Down
+            sadderSwiperRec.direction = .down
             faceView.addGestureRecognizer(sadderSwiperRec)
             updateUI()
         }
     }
     
-    @IBAction func changeBrow(sender: UIRotationGestureRecognizer) {
+    @IBAction func changeBrow(_ sender: UIRotationGestureRecognizer) {
         switch sender.state {
-        case .Changed,.Ended:
+        case .changed,.ended:
             if sender.rotation > CGFloat(M_PI/4) {
                 expression.eyeBrows = expression.eyeBrows.moreRelaxedBrow()
                 sender.rotation = 0.0
@@ -50,14 +50,14 @@ class FaceViewController: UIViewController {
         }
     }
 
-    @IBAction func toggleEye(sender: UITapGestureRecognizer) {
-        if sender.state == .Ended {
+    @IBAction func toggleEye(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
         switch expression.eyes {
-        case .Open:
-            expression.eyes = .Closed
-        case .Closed:
-            expression.eyes = .Open
-        case .Squinting:
+        case .open:
+            expression.eyes = .closed
+        case .closed:
+            expression.eyes = .open
+        case .squinting:
             break
         }
         }
@@ -72,19 +72,19 @@ class FaceViewController: UIViewController {
     }
 
     // a dictionary mapping enum to int
-    private var mouthCurvs = [FacialExpression.Mouth.Frown:-1.0, FacialExpression.Mouth.Smirk:-0.5, FacialExpression.Mouth.Neutural:0.0, FacialExpression.Mouth.Grin:0.5, FacialExpression.Mouth.Smile: 1.0]
+    fileprivate var mouthCurvs = [FacialExpression.Mouth.frown:-1.0, FacialExpression.Mouth.smirk:-0.5, FacialExpression.Mouth.neutural:0.0, FacialExpression.Mouth.grin:0.5, FacialExpression.Mouth.smile: 1.0]
     
-    private var eyeBrowTilts = [FacialExpression.EyeBrows.Furrowed:CGFloat(-0.5),FacialExpression.EyeBrows.Relaxed:CGFloat(0.5),FacialExpression.EyeBrows.Normal:CGFloat(0.0)]
+    fileprivate var eyeBrowTilts = [FacialExpression.EyeBrows.furrowed:CGFloat(-0.5),FacialExpression.EyeBrows.relaxed:CGFloat(0.5),FacialExpression.EyeBrows.normal:CGFloat(0.0)]
     
     // note updateUI might be called before faceView is set e.g prepareSegue, so need to do nil check here
-    private func updateUI() {
+    fileprivate func updateUI() {
         if faceView != nil {
             switch expression.eyes {
-            case .Closed:
+            case .closed:
                 faceView.eyeClosed = true
-            case .Open:
+            case .open:
                 faceView.eyeClosed = false
-            case .Squinting:
+            case .squinting:
                 faceView.eyeClosed = true
             }
             
