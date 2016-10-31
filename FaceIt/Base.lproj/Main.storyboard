@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="-1946" y="573"/>
         </scene>
-        <!--Face View Controller-->
+        <!--Blink Face View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FaceViewController" customModule="FaceIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BlinkFaceViewController" customModule="FaceIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -146,7 +146,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="YKg-w2-US2">
                     <connections>
-                        <action selector="toggleEye:" destination="BYZ-38-t0r" id="66D-9L-Lbu"/>
+                        <action selector="headShake:" destination="BYZ-38-t0r" id="67x-Rp-Wy0"/>
                     </connections>
                 </tapGestureRecognizer>
                 <rotationGestureRecognizer id="jLh-8O-iW5">

@@ -18,6 +18,40 @@ class FaceViewController: UIViewController {
         }
     }
     
+    private struct Animation {
+        static let ShakeAngle = CGFloat(M_PI / 6)
+        static let ShakeDuration = 0.5
+    }
+    
+    @IBAction func headShake(_ sender: UITapGestureRecognizer) {
+        UIView.animate(
+            withDuration: Animation.ShakeDuration,
+            animations: {
+                self.faceView.transform = CGAffineTransform(rotationAngle: Animation.ShakeAngle)
+            },
+            completion: { finished in
+                if finished {
+                    UIView.animate(
+                        withDuration: Animation.ShakeDuration,
+                        animations: {
+                            self.faceView.transform = CGAffineTransform(rotationAngle: -Animation.ShakeAngle)
+                        },
+                        completion: { finished in
+                            if finished {
+                                UIView.animate(
+                                    withDuration: Animation.ShakeDuration,
+                                    animations: {
+                                        self.faceView.transform = CGAffineTransform(rotationAngle: 0)
+                                    },
+                                    completion: nil
+                                )
+                            }
+                        }
+                    )
+                }
+            }
+        )
+    }
     @IBOutlet weak var faceView: FaceView! {
         didSet {
             // this will be called when faceView is hooked up
