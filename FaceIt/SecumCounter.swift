@@ -19,6 +19,9 @@ class SecumCounter: UIView {
     var heartImage:UIImage = UIImage(named: "heart_solid.png")!;
     
     override func draw(_ rect: CGRect) {
+        // this should fix the black square issue
+        self.isOpaque = false;
+        
         guard let context = UIGraphicsGetCurrentContext() else {
             return;
         }
