@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2258D3091EAD5D3B0032D00F /* SecumCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258D3081EAD5D3B0032D00F /* SecumCounter.swift */; };
+		2258D30B1EAD5EF50032D00F /* SecumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258D30A1EAD5EF50032D00F /* SecumController.swift */; };
+		2258D30D1EAD684A0032D00F /* cat_timer.png in Resources */ = {isa = PBXBuildFile; fileRef = 2258D30C1EAD684A0032D00F /* cat_timer.png */; };
+		227791121EAD95E4005B48DC /* cat_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 227791111EAD95E3005B48DC /* cat_head.png */; };
+		227791141EADA1D7005B48DC /* heart_solid.png in Resources */ = {isa = PBXBuildFile; fileRef = 227791131EADA1D7005B48DC /* heart_solid.png */; };
 		227FC3891DC6B0AF00A1CF8F /* BlinkFaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FC3881DC6B0AF00A1CF8F /* BlinkFaceViewController.swift */; };
 		227FC38B1DC6B8DB00A1CF8F /* EyeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FC38A1DC6B8DB00A1CF8F /* EyeView.swift */; };
 		22EA51D81D98E19B004ABE9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA51D71D98E19B004ABE9D /* AppDelegate.swift */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2258D3081EAD5D3B0032D00F /* SecumCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecumCounter.swift; sourceTree = "<group>"; };
+		2258D30A1EAD5EF50032D00F /* SecumController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecumController.swift; sourceTree = "<group>"; };
+		2258D30C1EAD684A0032D00F /* cat_timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat_timer.png; sourceTree = "<group>"; };
+		227791111EAD95E3005B48DC /* cat_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat_head.png; sourceTree = "<group>"; };
+		227791131EADA1D7005B48DC /* heart_solid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_solid.png; sourceTree = "<group>"; };
 		227FC3881DC6B0AF00A1CF8F /* BlinkFaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlinkFaceViewController.swift; sourceTree = "<group>"; };
 		227FC38A1DC6B8DB00A1CF8F /* EyeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeView.swift; sourceTree = "<group>"; };
 		22EA51D41D98E19B004ABE9D /* FaceIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,10 +81,12 @@
 				227FC3881DC6B0AF00A1CF8F /* BlinkFaceViewController.swift */,
 				22EA51DB1D98E19B004ABE9D /* Main.storyboard */,
 				22EA51EC1D98E2C7004ABE9D /* FaceView.swift */,
+				2258D3081EAD5D3B0032D00F /* SecumCounter.swift */,
 				22EA51EE1D9B8059004ABE9D /* FacialExpression.swift */,
 				22EA52131DA1CAEC004ABE9D /* EmotionsViewController.swift */,
 				22EA52191DA1E276004ABE9D /* VCL.swift */,
 				227FC38A1DC6B8DB00A1CF8F /* EyeView.swift */,
+				2258D30A1EAD5EF50032D00F /* SecumController.swift */,
 			);
 			path = FaceIt;
 			sourceTree = "<group>";
@@ -84,6 +96,9 @@
 			children = (
 				22EA51D71D98E19B004ABE9D /* AppDelegate.swift */,
 				22EA51DE1D98E19B004ABE9D /* Assets.xcassets */,
+				227791111EAD95E3005B48DC /* cat_head.png */,
+				227791131EADA1D7005B48DC /* heart_solid.png */,
+				2258D30C1EAD684A0032D00F /* cat_timer.png */,
 				22EA51E01D98E19B004ABE9D /* LaunchScreen.storyboard */,
 				22EA51E31D98E19B004ABE9D /* Info.plist */,
 			);
@@ -122,6 +137,7 @@
 				TargetAttributes = {
 					22EA51D31D98E19B004ABE9D = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8KU5XM4LZ6;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -149,9 +165,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2258D30D1EAD684A0032D00F /* cat_timer.png in Resources */,
 				22EA51E21D98E19B004ABE9D /* LaunchScreen.storyboard in Resources */,
+				227791141EADA1D7005B48DC /* heart_solid.png in Resources */,
 				22EA51DF1D98E19B004ABE9D /* Assets.xcassets in Resources */,
 				22EA51DD1D98E19B004ABE9D /* Main.storyboard in Resources */,
+				227791121EAD95E4005B48DC /* cat_head.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,11 +182,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				22EA51DA1D98E19B004ABE9D /* FaceViewController.swift in Sources */,
+				2258D30B1EAD5EF50032D00F /* SecumController.swift in Sources */,
 				22EA51EF1D9B8059004ABE9D /* FacialExpression.swift in Sources */,
 				22EA52141DA1CAEC004ABE9D /* EmotionsViewController.swift in Sources */,
 				22EA521A1DA1E276004ABE9D /* VCL.swift in Sources */,
 				22EA51D81D98E19B004ABE9D /* AppDelegate.swift in Sources */,
 				227FC3891DC6B0AF00A1CF8F /* BlinkFaceViewController.swift in Sources */,
+				2258D3091EAD5D3B0032D00F /* SecumCounter.swift in Sources */,
 				227FC38B1DC6B8DB00A1CF8F /* EyeView.swift in Sources */,
 				22EA51ED1D98E2C7004ABE9D /* FaceView.swift in Sources */,
 			);
@@ -218,6 +239,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8KU5XM4LZ6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -266,6 +288,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8KU5XM4LZ6;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

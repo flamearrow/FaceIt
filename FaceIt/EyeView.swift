@@ -43,8 +43,12 @@ class EyeView: UIView {
         }
         
         path.lineWidth = lineWidth
-        color.setStroke()
-        path.stroke()
+        
+        color.setFill()
+        path.fill()
+        
+        //color.setStroke()
+        //path.stroke()
     }
 
 }
